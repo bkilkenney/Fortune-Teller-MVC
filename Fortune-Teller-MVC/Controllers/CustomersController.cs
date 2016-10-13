@@ -52,6 +52,8 @@ namespace Fortune_Teller_MVC.Controllers
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
+                Fortune fortune = new Fortune();
+                fortune.CustomerID = customer.CustomerID;
                 return RedirectToAction("Index");
             }
 
