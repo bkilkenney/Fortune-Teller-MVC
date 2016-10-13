@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FortuneTellerMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="BirthMonth" Type="tinyint" Nullable="false" />
+    <Property Name="FavoriteColor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumberOfSiblings" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fortunes">
+    <Key>
+      <PropertyRef Name="FortuneID" />
+    </Key>
+    <Property Name="FortuneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="YearsUntilRetirement" Type="tinyint" Nullable="false" />
+    <Property Name="MoneyInBank" Type="money" Nullable="false" />
+    <Property Name="VacationHome" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransportationMode" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Fortunes_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Fortunes" Type="Self.Fortunes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fortunes">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FortuneTellerMVCModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fortunes" EntityType="Self.Fortunes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Fortunes_Customers" Association="Self.FK_Fortunes_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Fortunes" EntitySet="Fortunes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

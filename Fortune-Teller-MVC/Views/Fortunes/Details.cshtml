@@ -1,0 +1,58 @@
+﻿@model Fortune_Teller_MVC.Models.Fortune
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fortune</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.YearsUntilRetirement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearsUntilRetirement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoneyInBank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoneyInBank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VacationHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VacationHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransportationMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransportationMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FortuneID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
