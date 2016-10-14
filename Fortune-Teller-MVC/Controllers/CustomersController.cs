@@ -105,31 +105,31 @@ namespace Fortune_Teller_MVC.Controllers
 
             if (customer.FavoriteColor == "Red")
             {
-                Console.WriteLine("flying a dirigible.");
+                ViewBag.TransportationMode = "flying a dirigible.";
             }
             else if (customer.FavoriteColor == "Orange")
             {
-                Console.WriteLine("captaining the black pearl.");
+                ViewBag.TransportationMode = "captaining the black pearl.";
             }
             else if (customer.FavoriteColor == "Yellow")
             {
-                Console.WriteLine("cruisin' on a vespa.");
+                ViewBag.TransportationMode = "cruisin' on a vespa.";
             }
             else if (customer.FavoriteColor == "Green")
             {
-                Console.WriteLine("inside a trojan horse.");
+                ViewBag.TransportationMode = "inside a trojan horse.";
             }
             else if (customer.FavoriteColor == "Blue")
             {
-                Console.WriteLine("driving the batmobile, the crappy original one from the 70s,\nnot the Christian Bale Dark Knight batmobile.");
+                ViewBag.TransportationMode = "driving the batmobile, the crappy original one from the 70s,\nnot the Christian Bale Dark Knight batmobile.";
             }
             else if (customer.FavoriteColor == "Indigo")
             {
-                Console.WriteLine("riding a goat.");
+                ViewBag.TransportationMode = "riding a goat.";
             }
             else if (customer.FavoriteColor == "Violet")
             {
-                Console.WriteLine("driving a power wheel.");
+                ViewBag.TransportationMode = "driving a power wheel.";
             }
            
         }
