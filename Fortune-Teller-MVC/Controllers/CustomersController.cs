@@ -37,12 +37,12 @@ namespace Fortune_Teller_MVC.Controllers
 
             //1st if
 
-            if (age % 2 == 0)
+            if (customer.Age % 2 == 0)
             {
                 Console.WriteLine(fullName + ", you will retire in 63 years");
             }
 
-            else if (age % 2 != 0)
+            else if (customer.Age % 2 != 0)
             {
                 Console.WriteLine(fullName + ", you will retire in 3 years");
             }
@@ -150,7 +150,7 @@ namespace Fortune_Teller_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,FirstName,LastName,Age,BirthMonth,FavoriteColor,NumberOfSiblings")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,FirstName,LastName,customer.Age,BirthMonth,FavoriteColor,NumberOfSiblings")] Customer customer)
         {
             if (ModelState.IsValid)
             {
