@@ -80,23 +80,23 @@ namespace Fortune_Teller_MVC.Controllers
 
             if ( customer.NumberOfSiblings == 0)
             {
-                Console.WriteLine("to your vacation home in an igloo");
+                ViewBag.VacationHome = "to your vacation home in an igloo";
             }
             else if (customer.NumberOfSiblings == 1)
             {
-                Console.WriteLine("to your vacation home in Schenectady");
+                ViewBag.VacationHome = "to your vacation home in Schenectady";
             }
             else if (customer.NumberOfSiblings == 2)
             {
-                Console.WriteLine("to your vacation home in Cleveland Hopkins International Airport Terminal C");
+                ViewBag.VacationHome = "to your vacation home in Cleveland Hopkins International Airport Terminal C";
             }
             else if (customer.NumberOfSiblings == 3)
             {
-                Console.WriteLine("to your vacation home in Walla Walla Washington");
+                ViewBag.VacationHome = "to your vacation home in Walla Walla Washington";
             }
             else if (customer.NumberOfSiblings <= 0 || customer.NumberOfSiblings >= 4)
             {
-                Console.WriteLine("to your vacation home at the BMV");
+                ViewBag.VacationHome = "to your vacation home at the BMV";
             }
 
 
