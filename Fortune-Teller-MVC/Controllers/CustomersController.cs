@@ -53,19 +53,19 @@ namespace Fortune_Teller_MVC.Controllers
 
 //2nd if
 
-            if (bMonth >= 1 && bMonth <= 4)
+            if (customer.BirthMonth >= 1 && customer.BirthMonth <= 4)
             {
                 Console.WriteLine("with $200,000 in the bank");
             }
-            else if (bMonth >= 5 && bMonth <= 8)
+            else if (customer.BirthMonth >= 5 && customer.BirthMonth <= 8)
             {
                 Console.WriteLine("with $6M in the bank");
             }
-            else if (bMonth >= 9 && bMonth <= 12)
+            else if (customer.BirthMonth >= 9 && customer.BirthMonth <= 12)
             {
                 Console.WriteLine("with $35.78 in the bank");
             }
-            else if (bMonth < 1 || bMonth > 12)
+            else if (customer.BirthMonth < 1 || customer.BirthMonth > 12)
             {
                 Console.WriteLine(", and there won't be any money, but when you die, on your deathbed,\n you will receive total consciousness.  Now go");
             }
