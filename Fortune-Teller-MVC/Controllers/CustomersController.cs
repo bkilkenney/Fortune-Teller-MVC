@@ -32,8 +32,112 @@ namespace Fortune_Teller_MVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            //Add fortune teller logic below:
+
+            //1st if
+
+            if (age % 2 == 0)
+            {
+                Console.WriteLine(fullName + ", you will retire in 63 years");
+            }
+
+            else if (age % 2 != 0)
+            {
+                Console.WriteLine(fullName + ", you will retire in 3 years");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Answer");
+            }
+
+//2nd if
+
+            if (bMonth >= 1 && bMonth <= 4)
+            {
+                Console.WriteLine("with $200,000 in the bank");
+            }
+            else if (bMonth >= 5 && bMonth <= 8)
+            {
+                Console.WriteLine("with $6M in the bank");
+            }
+            else if (bMonth >= 9 && bMonth <= 12)
+            {
+                Console.WriteLine("with $35.78 in the bank");
+            }
+            else if (bMonth < 1 || bMonth > 12)
+            {
+                Console.WriteLine(", and there won't be any money, but when you die, on your deathbed,\n you will receive total consciousness.  Now go");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Answer");
+            }
+
+
+      //3rd if
+
+
+            if ( customer.NumberOfSiblings == 0)
+            {
+                Console.WriteLine("to your vacation home in an igloo");
+            }
+            else if (customer.NumberOfSiblings == 1)
+            {
+                Console.WriteLine("to your vacation home in Schenectady");
+            }
+            else if (customer.NumberOfSiblings == 2)
+            {
+                Console.WriteLine("to your vacation home in Cleveland Hopkins International Airport Terminal C");
+            }
+            else if (customer.NumberOfSiblings == 3)
+            {
+                Console.WriteLine("to your vacation home in Walla Walla Washington");
+            }
+            else if (customer.NumberOfSiblings <= 0 || customer.NumberOfSiblings >= 4)
+            {
+                Console.WriteLine("to your vacation home at the BMV");
+            }
+
+
+            //Last of the ifs. It is taking the char answer and parsing it to a int behind the scenes so ==, > operators will work.  But what about the help option?  
+
+
+            if (favColor == "Red")
+            {
+                Console.WriteLine("flying a dirigible.");
+            }
+            else if (favColor == "Orange")
+            {
+                Console.WriteLine("captaining the black pearl.");
+            }
+            else if (favColor == "Yellow")
+            {
+                Console.WriteLine("cruisin' on a vespa.");
+            }
+            else if (favColor == "Green")
+            {
+                Console.WriteLine("inside a trojan horse.");
+            }
+            else if (favColor == "Blue")
+            {
+                Console.WriteLine("driving the batmobile, the crappy original one from the 70s,\nnot the Christian Bale Dark Knight batmobile.");
+            }
+            else if (favColor == "Indigo")
+            {
+                Console.WriteLine("riding a goat.");
+            }
+            else if (favColor == "Violet")
+            {
+                Console.WriteLine("driving a power wheel.");
+            }
+           
+        }
+
             return View(customer);
         }
+
+
 
         // GET: Customers/Create
         public ActionResult Create()
@@ -50,11 +154,11 @@ namespace Fortune_Teller_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
-                Fortune fortune = new Fortune();
-                fortune.CustomerID = customer.CustomerID;
-                return RedirectToAction("Index");
+                db.Customers.Add(customer);                 //Add customer to the db
+                db.SaveChanges();                           //Save new altered db
+                Fortune fortune = new Fortune();            //Create an object of a Fortune
+                fortune.CustomerID = customer.CustomerID;   //Link a customer to a fortune
+                return RedirectToAction("Index");           //Return to home
             }
 
             return View(customer);

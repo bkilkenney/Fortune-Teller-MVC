@@ -63,7 +63,9 @@
 
 <p>FirstName + LastName will retire in X years, with $Y in bank.  A vacation home in Place, and a mode of transportation.</p>
 
-<p>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) will retire in <span>@ViewBag.YearsUntilRetirement</span> with <span>@ViewBag.MoneyInTheBank</span>, a vacation home in <span>@ViewBag.VacationHome</span>, and a <span>@ViewBag.TransportationMode</span>. </p>
+<p>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) will retire in 
+<span>@ViewBag.YearsUntilRetirement</span> with <span>@ViewBag.MoneyInTheBank</span>,
+a vacation home in <span>@ViewBag.VacationHome</span>, and a <span>@ViewBag.TransportationMode</span>. </p>
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
