@@ -103,31 +103,31 @@ namespace Fortune_Teller_MVC.Controllers
             //Last of the ifs. It is taking the char answer and parsing it to a int behind the scenes so ==, > operators will work.  But what about the help option?  
 
 
-            if (favColor == "Red")
+            if (customer.FavoriteColor == "Red")
             {
                 Console.WriteLine("flying a dirigible.");
             }
-            else if (favColor == "Orange")
+            else if (customer.FavoriteColor == "Orange")
             {
                 Console.WriteLine("captaining the black pearl.");
             }
-            else if (favColor == "Yellow")
+            else if (customer.FavoriteColor == "Yellow")
             {
                 Console.WriteLine("cruisin' on a vespa.");
             }
-            else if (favColor == "Green")
+            else if (customer.FavoriteColor == "Green")
             {
                 Console.WriteLine("inside a trojan horse.");
             }
-            else if (favColor == "Blue")
+            else if (customer.FavoriteColor == "Blue")
             {
                 Console.WriteLine("driving the batmobile, the crappy original one from the 70s,\nnot the Christian Bale Dark Knight batmobile.");
             }
-            else if (favColor == "Indigo")
+            else if (customer.FavoriteColor == "Indigo")
             {
                 Console.WriteLine("riding a goat.");
             }
-            else if (favColor == "Violet")
+            else if (customer.FavoriteColor == "Violet")
             {
                 Console.WriteLine("driving a power wheel.");
             }
