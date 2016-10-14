@@ -132,8 +132,7 @@ namespace Fortune_Teller_MVC.Controllers
                 ViewBag.TransportationMode = "driving a power wheel.";
             }
            
-        }
-
+        
             return View(customer);
         }
 
