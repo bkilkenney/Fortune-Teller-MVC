@@ -39,16 +39,16 @@ namespace Fortune_Teller_MVC.Controllers
 
             if (customer.Age % 2 == 0)
             {
-                Console.WriteLine(fullName + ", you will retire in 63 years");
+                ViewBag.YearsUntilRetirement = customer.FirstName + ", you will retire in 63 years";
             }
 
             else if (customer.Age % 2 != 0)
             {
-                Console.WriteLine(fullName + ", you will retire in 3 years");
+                ViewBag.YearsUntilRetirement = customer.FirstName + ", you will retire in 3 years";
             }
             else
             {
-                Console.WriteLine("Invalid Answer");
+                ViewBag.YearsUntilRetirement = "Invalid Answer";
             }
 
 //2nd if
