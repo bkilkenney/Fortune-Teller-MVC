@@ -49,29 +49,29 @@ namespace Fortune_Teller_MVC.Controllers
             else
             {
                 ViewBag.YearsUntilRetirement = "Invalid Answer";
-            }
+            }        
 
 //2nd if
 
             if (customer.BirthMonth >= 1 && customer.BirthMonth <= 4)
             {
-                Console.WriteLine("with $200,000 in the bank");
+                ViewBag.MoneyInBank = "with $200,000 in the bank";
             }
             else if (customer.BirthMonth >= 5 && customer.BirthMonth <= 8)
             {
-                Console.WriteLine("with $6M in the bank");
+                ViewBag.MoneyInBank = "with $6M in the bank";
             }
             else if (customer.BirthMonth >= 9 && customer.BirthMonth <= 12)
             {
-                Console.WriteLine("with $35.78 in the bank");
+                ViewBag.MoneyInBank = "with $35.78 in the bank";
             }
             else if (customer.BirthMonth < 1 || customer.BirthMonth > 12)
             {
-                Console.WriteLine(", and there won't be any money, but when you die, on your deathbed,\n you will receive total consciousness.  Now go");
+                ViewBag.MoneyInBank = ", and there won't be any money, but when you die, on your deathbed,\n you will receive total consciousness.  Now go";
             }
             else
             {
-                Console.WriteLine("Invalid Answer");
+                ViewBag.MoneyInBank = "Invalid Answer";
             }
 
 
